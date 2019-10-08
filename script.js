@@ -17,7 +17,7 @@ function init() {
         animatePlanets(0.01);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawPlanets();
-        updateSystem();
+        orbit();
     }, 10);
 }
 
@@ -41,34 +41,8 @@ function animatePlanets(time) {
     }
 }
 
-function updateSystem() {
+function orbit() {
     var physics = new Gravity(planets);
 
     physics.calcGrav();
-
-    // var G = 1;
-
-    // for(let i = 0; i < planets.length; i++) {
-    //     for(let j = 0; j < planets.length; j++) {
-    //         if( i === j) continue;
-    //         var b1 = planets[i];
-    //         var b2 = planets[j];
-
-    //         var dist = Math.sqrt(
-    //             (b1.x - b2.x) * (b1.x - b2.x) +
-    //             (b1.y - b2.y) * (b1.y - b2.y)
-    //         );
-
-    //         var force = G*(b1.mass * b2.mass) / dist/dist;
-
-    //         var mass_x = (b2.x - b1.x) / dist;
-    //         var mass_y = (b2.y - b1.y) / dist;
-
-    //         b1.angle_x += mass_x * force / b1.mass;
-    //         b1.angle_y += mass_y * force / b1.mass;
-
-    //         b2.angle_x -= mass_x * force / b2.mass;
-    //         b2.angle_y -= mass_y * force / b2.mass;
-    //     }
-    // }
 }

@@ -10,9 +10,9 @@ class Gravity {
     }
 
     calcGrav() {
-        console.log('calculating gravity');
+        console.log(this.planets);
 
-        var bigG = 100;
+        var bigG = 10;
 
         for(let i = 0; i < this.planets.length; i++) {
             for(let j = 0; j < this.planets.length; j++) {
@@ -22,10 +22,10 @@ class Gravity {
                 let planet_2 = this.planets[j];
 
                 var distance = Math.sqrt(
-                    Math.pow((planet_1.x - planet_2.x), 2) + Math.pow((planet_1.y - planet_2.y), 2)
+                    (planet_1.x - planet_2.x) * (planet_1.x - planet_2.x) + (planet_1.y - planet_2.y) * (planet_1.y - planet_2.y)
                 );
 
-                var gravity = bigG * (planet_1.mass * planet_2.mass) / Math.pow(distance, 2);
+                var gravity = bigG * (planet_1.mass * planet_2.mass) / distance / distance;
 
                 var mass_x = (planet_2.x - planet_1.y) / distance;
                 var mass_y = (planet_2.y - planet_1.y) / distance;
