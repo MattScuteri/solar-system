@@ -27,7 +27,7 @@ class Gravity {
 
                 var gravity = bigG * (planet_1.mass * planet_2.mass) / distance / distance;
 
-                var mass_x = (planet_2.x - planet_1.y) / distance;
+                var mass_x = (planet_2.x - planet_1.x) / distance;
                 var mass_y = (planet_2.y - planet_1.y) / distance;
 
                 planet_1.angle_x += mass_x * gravity / planet_1.mass;
