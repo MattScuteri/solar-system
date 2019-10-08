@@ -1,27 +1,33 @@
 class Planet {
-    constructor(x, y, radius) {
+    constructor(x, y, speed, angle, mass) {
         this.x = x;
         this.y = y;
-        this.radius = radius;
+        this.speed_x = speed * Math.cos(angle);
+        this.speed_y = speed * Math.sin(angle);
+        this.mass = mass;
+        this.angle_x = 0;
+        this.angle_y = 0;
+        this.radius = 5;
     }
 
-    getSize() {
-        let size = this.radius / 100;
-        console.log(size);
-        return size;
-    }
 
-    getDistance() {
-        let distance = this.y / 100;
-        console.log(distance);
-        return distance;
-    }
 
     draw() {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.getSize(), 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.closePath();
         console.log("done!");
+    }
+
+    animate(time) {
+        console.log('allegedly animating');
+        this.speed_x += this.angle_x * time;
+        this.speed_y += this.angle_y * time;
+
+        this.x += this.speed_x * time;
+        this.y += this.speed_y * time;
+
+        this.angle_x = 0;
+        this.angle_y = 0;
     }
 }
