@@ -1,5 +1,5 @@
 class Planet {
-    constructor(x, y, speed, angle, mass) {
+    constructor(x, y, speed, angle, mass, radius) {
         this.x = x;
         this.y = y;
         this.speed_x = speed * Math.cos(angle);
@@ -7,7 +7,7 @@ class Planet {
         this.mass = mass;
         this.angle_x = 0;
         this.angle_y = 0;
-        this.radius = 5;
+        this.radius = radius;
     }
 
 
