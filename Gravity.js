@@ -12,7 +12,7 @@ class Gravity {
     calcGrav() {
         console.log(this.planets);
 
-        var bigG = 10;
+        var bigG = .00000000006;
 
         for(let i = 0; i < this.planets.length; i++) {
             for(let j = 0; j < this.planets.length; j++) {
