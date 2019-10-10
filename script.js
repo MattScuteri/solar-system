@@ -33,15 +33,15 @@ function createPlanets() {
     // mars {radius: .02, x-position: 785.28}
 
     //MARS
-    planets.push(new Planet(mid_x + 314, mid_y, 24, Math.PI/2, 63900, 2));
+    planets.push(new Planet(mid_x - 314, mid_y, 24, Math.PI/2, 63900, 2, "red"));
     //EARTH
-    planets.push(new Planet(mid_x, mid_y + 206, 39, Math.PI/2, 597200, 4));
+    planets.push(new Planet(mid_x - 206, mid_y, 39, Math.PI/2, 597200, 4, "blue"));
     //VENUS
-    planets.push(new Planet(mid_x + 149, mid_y, 37, 0, 486700, 4));
+    planets.push(new Planet(mid_x, mid_y + 149, 37, 0, 486700, 4, "orange"));
     //MERCURY
-    planets.push(new Planet(mid_x, mid_y + 80, 47, 0, 32300, .5));
+    planets.push(new Planet(mid_x, mid_y + 80, 47, 0, 32300, 1, "brown"));
     //SUN
-    planets.push(new Planet(mid_x, mid_y, 0, 0, 2000000000000000, 24));
+    planets.push(new Planet(mid_x, mid_y, 0, 0, 2000000000000000, 24, "yellow"));
 }
 
 function drawPlanets() {

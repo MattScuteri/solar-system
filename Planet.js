@@ -1,5 +1,5 @@
 class Planet {
-    constructor(x, y, speed, angle, mass, radius) {
+    constructor(x, y, speed, angle, mass, radius, color) {
         this.x = x;
         this.y = y;
         this.speed_x = speed * Math.cos(angle);
@@ -8,6 +8,7 @@ class Planet {
         this.angle_x = 0;
         this.angle_y = 0;
         this.radius = radius;
+        this.color = color
     }
 
 
@@ -15,6 +16,8 @@ class Planet {
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
         ctx.stroke();
         console.log("done!");
     }
