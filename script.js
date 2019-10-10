@@ -33,7 +33,7 @@ function createPlanets() {
     // mars {radius: .02, x-position: 785.28}
 
     //MARS
-    planets.push(new Planet(mid_x - 314, mid_y, 24, Math.PI/2, 63900, 2, "red"));
+    planets.push(new Planet(mid_x - 314, mid_y, 30, Math.PI/2, 63900, 2, "red"));
     //EARTH
     planets.push(new Planet(mid_x - 206, mid_y, 39, Math.PI/2, 597200, 4, "blue"));
     //VENUS
