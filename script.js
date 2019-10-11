@@ -60,6 +60,7 @@ function animatePlanets(time) {
 }
 
 function orbit() {
+    // pass planet array into Gravity class to do the physics
     var physics = new Gravity(planets);
 
     physics.calcGrav();
