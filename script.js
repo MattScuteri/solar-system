@@ -1,18 +1,19 @@
 var canvas;
-var width;
-var height;
 var ctx;
 
 var planets = [];
 
 function init() {
+    //initialize canvas
     canvas = document.getElementById('canvas');
+    //make canvas the size of the browser window
     canvas.width = innerWidth;
     canvas.height = innerHeight;
     ctx = canvas.getContext('2d');
 
     createPlanets();
 
+    //recall this set of functions every 10 milliseconds
     setInterval(function() {
         animatePlanets(0.01);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -22,15 +23,11 @@ function init() {
 }
 
 function createPlanets() {
+    //ensuring all planets are spawned somewhere towards the middle of screen
     var mid_x = innerWidth / 2;
     var mid_y = innerHeight / 2;
 
-    // scale of inner solar system in-px
-    // sun {radius: 2.4, x-position: 0}
-    // mercury {radius: .0005, x-position: 200 }
-    // venus {radius: .04, x-position: 372.48}
-    // earth {radius: .04 , x-position: 515.52}
-    // mars {radius: .02, x-position: 785.28}
+    //taking VERY significant liberties with scales - the inner solar system doesn't fit nicely in one window
 
     //MARS
     planets.push(new Planet(mid_x - 314, mid_y, 30, Math.PI/2, 63900, 2, "red"));
@@ -45,6 +42,7 @@ function createPlanets() {
 }
 
 function drawPlanets() {
+    //loop through array of planets calling draw method on each
     for(let i = 0; i < planets.length; i++) {
         planets[i].draw(ctx);
     }
