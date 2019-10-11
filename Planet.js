@@ -27,7 +27,7 @@ class Planet {
 
     animate(time) {
         console.log('allegedly animating');
-        // determines change in orbital angles - enables planets to animate in a circle
+        // determines change in orbital angles - grabs angle values from Gravity class
         this.speed_x += this.angle_x * time;
         this.speed_y += this.angle_y * time;
         
