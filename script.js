@@ -15,9 +15,13 @@ function init() {
 
     //recall this set of functions every 10 milliseconds
     setInterval(function() {
+        // updates orbital positions and circular angles of planets
         animatePlanets(0.01);
+        // entire canvas in preparation for planet re-draw
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // re-draw planets with new values
         drawPlanets();
+        // calculate gravitational forces between all bodies
         orbit();
     }, 10);
 }
@@ -49,6 +53,7 @@ function drawPlanets() {
 }
 
 function animatePlanets(time) {
+    //looping through the planets array to redraw new positions - passing in a time argument to help with acceleration calculations
     for(let i = 0; i < planets.length; i++) {
         planets[i].animate(time);
     }

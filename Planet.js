@@ -27,12 +27,15 @@ class Planet {
 
     animate(time) {
         console.log('allegedly animating');
+        // determines change in orbital angles - enables planets to animate in a circle
         this.speed_x += this.angle_x * time;
         this.speed_y += this.angle_y * time;
-
+        
+        // updates x & y positions to each time function is called
         this.x += this.speed_x * time;
         this.y += this.speed_y * time;
 
+        // reset state of orbital angles for next time function is called
         this.angle_x = 0;
         this.angle_y = 0;
     }
