@@ -32,9 +32,11 @@ class Gravity {
                 // Calculate gravitational force exerted between the two bodies
                 var gravity = bigG * (planet_1.mass * planet_2.mass) / distance / distance;
 
+                // Angular motion determined by distances between the two planets x & y axises
                 var motion_x = (planet_2.x - planet_1.x) / distance;
                 var motion_y = (planet_2.y - planet_1.y) / distance;
 
+                // Change angle of planet over time using gravitational force calculation
                 planet_1.angle_x += motion_x * gravity / planet_1.mass;
                 planet_1.angle_y += motion_y * gravity / planet_1.mass;
 
